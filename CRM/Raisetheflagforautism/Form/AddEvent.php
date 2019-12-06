@@ -425,7 +425,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     foreach ($fields as $name => $field) {
       $title = $field['title'];
       if ($field['type'] == 'select') {
-         $this->add('select', $name, $title, $this->getColorOptions(), $field['required']);
+         $this->add('select', $name, $title, CRM_Core_OptionGroup::values('chapter_20180619153429'), $field['required']);
       }
       if ($field['type'] == 'text') {
         $this->add('text', $name, $title, NULL, $field['required']);
