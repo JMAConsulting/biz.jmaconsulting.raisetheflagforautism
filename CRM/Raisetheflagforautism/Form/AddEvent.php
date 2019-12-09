@@ -203,10 +203,6 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
 
     $this->assign('postHelps', $postHelps);
 
-    $captcha = CRM_Utils_ReCAPTCHA::singleton();
-    $captcha->add($this);
-    $this->assign('isCaptcha', TRUE);
-
     $this->addButtons(array(
       array(
         'type' => 'upload',
@@ -217,6 +213,11 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     $this->_elementNames = $this->getRenderableElementNames();
     // export form elements
     $this->assign('elementNames', $this->_elementNames);
+
+    $captcha = CRM_Utils_ReCAPTCHA::singleton();
+    $captcha->add($this);
+    $this->assign('isCaptcha', TRUE);
+
     parent::buildQuickForm();
   }
 
