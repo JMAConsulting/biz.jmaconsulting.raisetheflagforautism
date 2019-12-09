@@ -226,18 +226,19 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     // export form elements
     $this->assign('elementNames', $this->_elementNames);
 
+    /**
     $captcha = CRM_Utils_ReCAPTCHA::singleton();
     $captcha->add($this);
     $this->assign('isCaptcha', TRUE);
+   */
 
     parent::buildQuickForm();
   }
 
   public function postProcess() {
-
-    $values = $this->exportValues();
+    $values = $this->controller->exportValues($this->_name);
     $contactID = NULL;
-    $fields = CRM_Core_BAO_UFGroup::getFields(OAP_INDIVIDUAL, FALSE, CRM_Core_Action::VIEW);
+    $fields = CRM_Core_BAO_UFGroup::getFields(142, FALSE, CRM_Core_Action::VIEW);
     $values['skip_greeting_processing'] = TRUE;
     $contactID = CRM_Contact_BAO_Contact::createProfileContact($values, $fields, $contactID, NULL, 142);
 
@@ -260,7 +261,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     <p>%s</p>
      <br>
     <p>%s</p>
-    ',$url , $values['event_description']);
+    ', $url , $values['event_description']);
 
     $params = [
       'summary' => "",
