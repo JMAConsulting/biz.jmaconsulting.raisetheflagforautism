@@ -136,14 +136,18 @@ function raisetheflagforautism_civicrm_entityTypes(&$entityTypes) {
 
 // --- Functions below this ship commented out. Uncomment as required. ---
 
-/**
- * Implements hook_civicrm_preProcess().
- *
- * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_preProcess
- *
 function raisetheflagforautism_civicrm_preProcess($formName, &$form) {
-
-} // */
+  if ($formName == "CRM_Core_Form_ShortCode") {
+    $form->components['raise_the_flag'] = array(
+      'label' => ts("Raise The Flag"),
+      'select' => array(
+        'key' => 'id',
+        'entity' => 'Event',
+        'select' => array('minimumInputLength' => 0),
+      ),
+    );
+  }
+}
 
 /**
  * Implements hook_civicrm_navigationMenu().
