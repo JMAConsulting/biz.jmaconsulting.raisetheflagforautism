@@ -131,6 +131,11 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'text',
         'required' => TRUE,
       ],
+      'event_description' => [
+        'title' => ts('Event Description'),
+        'type' => 'text',
+        'required' => FALSE,
+      ],
       'location' => [
         'title' => ts('Name of location of flag raising?'),
         'type' => 'text',
@@ -186,6 +191,13 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       if ($field['type'] == 'YesNo') {
         $this->addYesNo($name, $title, FALSE, $field['required']);
       }
+      if ($field['type'] == 'textarea') {
+        $this->add('textarea',
+         $name,
+         $title,
+         "rows=4 cols=60"
+       );
+      }
       if ($field['type'] == 'date') {
         $params = array(
           'date' => 'dd/mm/yy',
@@ -229,10 +241,32 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     $values['skip_greeting_processing'] = TRUE;
     $contactID = CRM_Contact_BAO_Contact::createProfileContact($values, $fields, $contactID, NULL, 142);
 
+    $url = '';
+    if ($values['event_image']) {
+      $fileInfo = $values['event_image'];
+      $fileDAO = new CRM_Core_DAO_File();
+      $filename = pathinfo($fileInfo['name'], PATHINFO_BASENAME);
+      $fileDAO->uri = $filename;
+      $fileDAO->mime_type = $fileInfo['type'];
+      $fileDAO->upload_date = date('YmdHis');
+      $fileDAO->save();
+      $fileID = $fileDAO->id;
+
+      $photo = basename($fileInfo['name']);
+      $url = sprintf("<img src='%s' style=\"height:516px; width:617px\"", CRM_Utils_System::url('civicrm/contact/imagefile', 'photo=' . $photo, TRUE, NULL, TRUE, TRUE));
+    }
+
+    $description = sprintf('
+    <p>%s</p>
+     <br>
+    <p>%s</p>
+    ',$url , $values['event_description']);
+
     $params = [
       'summary' => "",
       'event_type_id' => key(CRM_Event_PseudoConstant::eventType()),
       'is_public' => $values['open_to_public'],
+      'description' => $description,
       'is_online_registration' => '1',
       'start_date' => $values['ceremony_date'],
       'is_monetary' => '0',
