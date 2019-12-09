@@ -133,7 +133,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       ],
       'event_description' => [
         'title' => ts('Event Description'),
-        'type' => 'text',
+        'type' => 'textarea',
         'required' => FALSE,
       ],
       'location' => [
