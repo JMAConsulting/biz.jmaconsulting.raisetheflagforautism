@@ -2,8 +2,11 @@
 
 {foreach from=$elementNames item=elementName}
   <div class="crm-section">
-    <div class="label">{$form.$elementName.label}<br>{if $postHelp.$elementName}<sub>{$postHelp.$elementName}</sub>{/if}</div>
-    <div class="content">{$form.$elementName.html}</div>
+    <div class="label">{$form.$elementName.label}</div>
+    <div class="content">
+      {$form.$elementName.html}
+      {if $postHelps.$elementName}<div class="description">{$postHelps.$elementName}</div>{/if}
+    </div>
     <div class="clear"></div>
   </div>
 {/foreach}

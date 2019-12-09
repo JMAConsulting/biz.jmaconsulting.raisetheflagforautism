@@ -121,6 +121,11 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'select',
         'required' => TRUE,
       ],
+      'event_image' => [
+        'title' => ts('Image'),
+        'type' => 'file',
+        'required' => FALSE,
+      ],
       'event_title' => [
         'title' => ts('Event Title'),
         'type' => 'text',
@@ -163,7 +168,14 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'required' => TRUE,
       ],
     ];
+    $postHelps = [
+      'last_name' => ts('Will not be shared with the public - will be used to verify ceremony and send flag as required'),
+      'email-Primary' =>  ts('Will not be shared with the public - will be used to verify ceremony and send flag as required'),
+    ];
     foreach ($fields as $name => $field) {
+      if (!empty($field['post_help'])) {
+        $postHelps[$name] = $field['post_help'];
+      }
       $title = $field['title'];
       if ($field['type'] == 'select') {
          $this->add('select', $name, $title, CRM_Core_OptionGroup::values('chapter_20180619153429'), $field['required']);
@@ -181,13 +193,19 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         );
         $this->add('datepicker', $name, $title, '', $field['required'], $params);
       }
+      if ($field['type'] ==  'file') {
+        $this->add('file', $name, ts('Image'));
+        $this->addUploadElement($name);
+      }
     }
 
     $this->buildCustom(142, 'individual');
 
+    $this->assign('postHelps', $postHelps);
+
     $this->addButtons(array(
       array(
-        'type' => 'submit',
+        'type' => 'upload',
         'name' => E::ts('Submit'),
         'isDefault' => TRUE,
       ),
