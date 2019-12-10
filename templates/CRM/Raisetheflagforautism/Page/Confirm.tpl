@@ -5,7 +5,15 @@
     <div class="crm-section event_description-section summary">
         {$event.description}
     </div>
-    <div>{ts}Is this ceremony open to public? {/ts} {if $event.is_public eq 1}{ts}Yes{/ts}{else}{ts}No{/ts}{/if}</div>
+    <br>
+    <div class="crm-section">
+        <div class="label">
+          {ts}Is this ceremony open to public? {/ts}
+        </div>
+        <div class="content">
+          {if $event.is_public eq 1}{ts}Yes{/ts}{else}{ts}No{/ts}{/if}
+        </div>
+    </div>
   </div>
 
   <div class="clear"></div>
