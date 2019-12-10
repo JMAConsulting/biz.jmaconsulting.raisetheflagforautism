@@ -319,6 +319,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'custom_838' => $values['attending'], // Autism Ontario Representative
       'custom_834' => $values['require_flag'], // Flag required?
     ]);
+    CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/event-confirm', 'reset=1&id=' . $eventID));
     //CRM_Core_Error::debug('aaaa', $values);exit;
     parent::postProcess();
   }
