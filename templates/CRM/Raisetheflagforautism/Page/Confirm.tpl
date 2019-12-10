@@ -14,6 +14,15 @@
           {if $event.is_public eq 1}{ts}Yes{/ts}{else}{ts}No{/ts}{/if}
         </div>
     </div>
+    <br>
+    <div class="crm-section">
+        <div class="label">
+          {ts}Do you require a flag?{/ts}
+        </div>
+        <div class="content">
+          {if $event.custom_834 eq 1}{ts}Yes{/ts}{else}{ts}No{/ts}{/if}
+        </div>
+    </div>
   </div>
 
   <div class="clear"></div>
@@ -69,6 +78,12 @@
       </div>
   {/if}
 
-  {include file="CRM/Custom/Page/CustomDataView.tpl"}
+  {foreach from=$creator key=name item=info}
+    <div class="crm-section event_$name-section">
+        <div class="label">{$info.label}</div>
+        <div class="content">{$info.value}</div>
+        <div class="clear"></div>
+    </div>
+  {/foreach}
 
 </div>
