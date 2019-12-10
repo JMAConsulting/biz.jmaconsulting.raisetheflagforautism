@@ -278,7 +278,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       //'is_online_registration' => '1',
       'start_date' => $values['ceremony_date'],
       'is_monetary' => '0',
-      'is_active' => 1,
+      'is_active' => 0,
       'title' => "Raise The Flag - " . $values['event_title'],
       'created_date' => date('YmdHis'),
       'created_id' => $contactID,
@@ -314,10 +314,10 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
 
     civicrm_api3('CustomValue', 'create', [
       'entity_id' => $eventID,
-      'custom_830' => $contactID,
-      'custom_325' => CRM_Core_DAO::VALUE_SEPARATOR . $values['local_chapter'] . CRM_Core_DAO::VALUE_SEPARATOR,
-      'custom_838' => $values['attending'],
-      'custom_834' => $values['require_flag'],
+      'custom_830' => $contactID, // Event Created By
+      'custom_325' => CRM_Core_DAO::VALUE_SEPARATOR . $values['local_chapter'] . CRM_Core_DAO::VALUE_SEPARATOR, // Event Chapter
+      'custom_838' => $values['attending'], // Autism Ontario Representative
+      'custom_834' => $values['require_flag'], // Flag required?
     ]);
     //CRM_Core_Error::debug('aaaa', $values);exit;
     parent::postProcess();
