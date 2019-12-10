@@ -321,6 +321,33 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'custom_838' => $values['attending'], // Autism Ontario Representative
       'custom_834' => $values['require_flag'], // Flag required?
     ]);
+
+    $url = sprintf("<a href='%s'>%s</a>", CRM_Utils_System::url('civicrm/event/manage/settings', 'reset=1&action=update&id=' . $eventID), $params['title']);
+    $displayName = CRM_Contact_BAO_Contact::displayName($contactID);
+
+    $messageTemplates = new CRM_Core_DAO_MessageTemplate();
+    $messageTemplates->id = 89;
+    $messageTemplates->find(TRUE);
+
+    $body_subject = CRM_Core_Smarty::singleton()->fetch("string:$messageTemplates->msg_subject");
+    $body_text    = str_replace('{creator-name}', $displayName, str_replace('{event-link}', $url, $messageTemplates->msg_text));
+    $body_html    = "{crmScope extensionKey='biz.jmaconsulting.oapproviderlistapp'}" . $messageTemplates->msg_html . "{/crmScope}";
+    $body_html    = str_replace('{creator-name}', $displayName, str_replace('{event-link}', $url, $body_html));
+    $body_html = CRM_Core_Smarty::singleton()->fetch("string:{$body_html}");
+    $body_text = CRM_Core_Smarty::singleton()->fetch("string:{$body_text}");
+
+    $mailParams = array(
+      'groupName' => 'New Raiser the Flag Event Submitted',
+      'from' => '"Autism Ontario" <info@autismontario.com>',
+      'toName' =>  "Jennifer Dent",
+      'toEmail' => "jennifer@autismontario.com",
+      'subject' => $body_subject,
+      'messageTemplateID' => $messageTemplates->id,
+      'html' => $body_html,
+      'text' => $body_text,
+    );
+    CRM_Utils_Mail::send($mailParams);
+
     CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/event-confirm', 'reset=1&id=' . $eventID));
     //CRM_Core_Error::debug('aaaa', $values);exit;
     parent::postProcess();
