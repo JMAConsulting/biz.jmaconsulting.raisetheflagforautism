@@ -1,5 +1,7 @@
 <h2>'{$event.title}' created succesfully</h2>
 
+<h3>{ts}Thanks for submitting this event. We will review your submission and add it to the website shortly.{/ts}<h3>
+
 <div class="vevent crm-event-id-{$event.id} crm-block crm-event-info-form-block">
   <div class="event-info">
     <div class="crm-section event_description-section summary">

@@ -26,6 +26,7 @@ class CRM_Raisetheflagforautism_Page_Confirm extends CRM_Core_Page {
       'api.LocBlock.get' => ['sequential' => 1, 'id' => "\$value.loc_block_id"],
       'api.Address.get' => ['sequential' => 1, 'contact_id' => "\$value.created_id"],
       'api.Email.get' => ['sequential' => 1, 'contact_id' => "\$value.created_id"],
+      'api.Phone.get' => ['sequential' => 1, 'contact_id' => "\$value.created_id"],
     ])['values'][$id];
 
     $this->assign('event', $event);
@@ -51,6 +52,10 @@ class CRM_Raisetheflagforautism_Page_Confirm extends CRM_Core_Page {
       'mailing_address' => [
         'label' => ts('Creator Mailing Address'),
         'value' => $address[1]['display'],
+      ],
+      'phone' => [
+        'label' => ts('Creator Phone'),
+        'value' => $event['api.Phone.get']['values'][0]['phone'],
       ],
     ];
     $this->assign('creator', $createdByInfo);

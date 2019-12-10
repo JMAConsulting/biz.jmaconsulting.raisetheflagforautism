@@ -121,11 +121,13 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'select',
         'required' => TRUE,
       ],
+      /*
       'event_image' => [
         'title' => ts('Image'),
         'type' => 'file',
         'required' => FALSE,
       ],
+      */
       'event_title' => [
         'title' => ts('Event Title'),
         'type' => 'text',
@@ -248,7 +250,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     $contactID = CRM_Contact_BAO_Contact::createProfileContact($values, $fields, $contactID, NULL, 142);
 
     $url = '';
-    if ($values['event_image']) {
+    if (!empty($values['event_image'])) {
       $fileInfo = $values['event_image'];
       rename($fileInfo['name'], CRM_Core_Config::singleton()->imageUploadDir . basename($fileInfo['name']));
       $fileDAO = new CRM_Core_DAO_File();
