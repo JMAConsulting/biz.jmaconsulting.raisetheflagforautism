@@ -100,11 +100,11 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         }
       }
 
-      if ($addCaptcha && !$viewOnly) {
+      /* if ($addCaptcha && !$viewOnly) {
         $captcha = CRM_Utils_ReCAPTCHA::singleton();
         $captcha->add($this);
         $this->assign('isCaptcha', TRUE);
-      }
+      } */
     }
   }
 
@@ -162,13 +162,18 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'required' => TRUE,
       ],
       'attending' => [
-        'title' => ts('Autism Ontario - Who is attending?'),
-        'type' => 'Text',
+        'title' => ts('Autism Ontario Representation - Who is attending?'),
+        'type' => 'text',
         'required' => TRUE,
       ],
       'open_to_public' => [
         'title' => ts('Is this ceremony open to public?'),
         'post_help' => ts('i.e. do you want Autism Ontario to list your ceremony and help spread the word?'),
+        'type' => 'YesNo',
+        'required' => TRUE,
+      ],
+      'require_flag' => [
+        'title' => ts('Do you require a flag?'),
         'type' => 'YesNo',
         'required' => TRUE,
       ],
@@ -245,6 +250,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     $url = '';
     if ($values['event_image']) {
       $fileInfo = $values['event_image'];
+      rename($fileInfo['name'], CRM_Core_Config::singleton()->imageUploadDir . basename($fileInfo['name']));
       $fileDAO = new CRM_Core_DAO_File();
       $filename = pathinfo($fileInfo['name'], PATHINFO_BASENAME);
       $fileDAO->uri = $filename;
@@ -254,7 +260,8 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       $fileID = $fileDAO->id;
 
       $photo = basename($fileInfo['name']);
-      $url = sprintf("<img src='%s' style=\"height:516px; width:617px\"", CRM_Utils_System::url('civicrm/contact/imagefile', 'photo=' . $photo, TRUE, NULL, TRUE, TRUE));
+      //$url = sprintf("<img src='%s' style=\"height:516px; width:617px\">", );
+      $url = "<img src='http://staging.raisetheflagforautism.com/wp-content/uploads/civicrm/persist/" . basename($fileInfo['name']) . "' style='height:516px;width:617px'>";
     }
 
     $description = sprintf('
@@ -265,14 +272,14 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
 
     $params = [
       'summary' => "",
-      'event_type_id' => key(CRM_Event_PseudoConstant::eventType()),
+      'event_type_id' => 23,
       'is_public' => $values['open_to_public'],
       'description' => $description,
-      'is_online_registration' => '1',
+      //'is_online_registration' => '1',
       'start_date' => $values['ceremony_date'],
       'is_monetary' => '0',
       'is_active' => 1,
-      'title' => $values['event_title'],
+      'title' => "Raise The Flag - " . $values['event_title'],
       'created_date' => date('YmdHis'),
       'created_id' => $contactID,
     ];
@@ -304,6 +311,14 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'loc_block_id' => CRM_Core_BAO_Location::create($locParams, TRUE, 'event')['id'],
     ];
     civicrm_api3('Event', 'create', $params);
+
+    civicrm_api3('CustomValue', 'create', [
+      'entity_id' => $eventID,
+      'custom_830' => $contactID,
+      'custom_325' => CRM_Core_DAO::VALUE_SEPARATOR . $values['local_chapter'] . CRM_Core_DAO::VALUE_SEPARATOR,
+      'custom_838' => $values['attending'],
+      'custom_834' => $values['require_flag'],
+    ]);
     //CRM_Core_Error::debug('aaaa', $values);exit;
     parent::postProcess();
   }
