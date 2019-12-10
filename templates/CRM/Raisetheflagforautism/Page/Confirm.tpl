@@ -1,4 +1,4 @@
-<h1>{$event.title}</h1>
+<h2>'{$event.title}' created succesfully</h2>
 
 <div class="vevent crm-event-id-{$event.id} crm-block crm-event-info-form-block">
   <div class="event-info">
