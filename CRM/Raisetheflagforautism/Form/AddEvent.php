@@ -285,6 +285,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'created_date' => date('YmdHis'),
       'created_id' => $contactID,
     ];
+    $title = $params['title'];
     $eventID = civicrm_api3('Event', 'create', $params)['id'];
 
     $address = [
@@ -322,7 +323,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'custom_834' => $values['require_flag'], // Flag required?
     ]);
 
-    $url = sprintf("<a href='%s'>%s</a>", CRM_Utils_System::url('civicrm/event/manage/settings', 'reset=1&action=update&id=' . $eventID), $params['title']);
+    $url = sprintf("<a href='%s'>%s</a>", CRM_Utils_System::url('civicrm/event/manage/settings', 'reset=1&action=update&id=' . $eventID), $title);
     $displayName = CRM_Contact_BAO_Contact::displayName($contactID);
 
     $messageTemplates = new CRM_Core_DAO_MessageTemplate();
