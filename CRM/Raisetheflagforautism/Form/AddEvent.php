@@ -218,7 +218,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       }
     }
 
-    $this->buildCustom(142, 'individual');
+    $this->buildCustom(145, 'individual');
 
     $this->assign('postHelps', $postHelps);
 
@@ -245,9 +245,9 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
   public function postProcess() {
     $values = $this->controller->exportValues($this->_name);
     $contactID = NULL;
-    $fields = CRM_Core_BAO_UFGroup::getFields(142, FALSE, CRM_Core_Action::VIEW);
+    $fields = CRM_Core_BAO_UFGroup::getFields(145, FALSE, CRM_Core_Action::VIEW);
     $values['skip_greeting_processing'] = TRUE;
-    $contactID = CRM_Contact_BAO_Contact::createProfileContact($values, $fields, $contactID, NULL, 142);
+    $contactID = CRM_Contact_BAO_Contact::createProfileContact($values, $fields, $contactID, NULL, 145);
 
     $url = '';
     if (!empty($values['event_image'])) {
@@ -319,8 +319,8 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'entity_id' => $eventID,
       'custom_830' => $contactID, // Event Created By
       'custom_325' => CRM_Core_DAO::VALUE_SEPARATOR . $values['local_chapter'] . CRM_Core_DAO::VALUE_SEPARATOR, // Event Chapter
-      'custom_838' => $values['attending'], // Autism Ontario Representative
-      'custom_834' => $values['require_flag'], // Flag required?
+      'custom_850' => $values['attending'], // Autism Ontario Representative
+      'custom_846' => $values['require_flag'], // Flag required?
     ]);
 
     $url = sprintf("<a href='%s'>%s</a>", CRM_Utils_System::url('civicrm/event/manage/settings', 'reset=1&action=update&id=' . $eventID), $title);
