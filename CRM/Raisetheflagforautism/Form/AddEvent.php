@@ -343,7 +343,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'groupName' => 'New Raise the Flag Event Submitted',
       'from' => '"Autism Ontario" <info@autismontario.com>',
       'toName' =>  "Jennifer Dent",
-      'toEmail' => "edsel.lopez@jmaconsulting.biz",//"jennifer@autismontario.com",
+      'toEmail' => "jennifer@autismontario.com",
       'subject' => $body_subject,
       'messageTemplateID' => $messageTemplates->id,
       'html' => $body_html,
