@@ -117,7 +117,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
 
     $fields = [
       'local_chapter' => [
-        'title' => ts('Closest local chapter of Austism Ontario?'),
+        'title' => ts('Closest local chapter of Autism Ontario?'),
         'type' => 'select',
         'required' => TRUE,
       ],
@@ -146,6 +146,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'street_address' => [
         'title' => ts('Street Address'),
         'type' => 'text',
+        'post_help' => ts('This is where the flag will be sent. If you want the flag sent to a different address please email RTF@autismontario.com'),
         'required' => TRUE,
       ],
       'city' => [
