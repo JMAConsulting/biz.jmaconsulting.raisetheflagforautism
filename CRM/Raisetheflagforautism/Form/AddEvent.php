@@ -121,23 +121,6 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'select',
         'required' => TRUE,
       ],
-      /*
-      'event_image' => [
-        'title' => ts('Image'),
-        'type' => 'file',
-        'required' => FALSE,
-      ],
-      */
-      'event_title' => [
-        'title' => ts('Event Title'),
-        'type' => 'text',
-        'required' => TRUE,
-      ],
-      'event_description' => [
-        'title' => ts('Event Description'),
-        'type' => 'textarea',
-        'required' => FALSE,
-      ],
       'location' => [
         'title' => ts('Name of location of flag raising?'),
         'type' => 'text',
@@ -159,14 +142,21 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'text',
         'required' => TRUE,
       ],
+      /*
+      'event_image' => [
+        'title' => ts('Image'),
+        'type' => 'file',
+        'required' => FALSE,
+      ],
+      */
+      'require_flag' => [
+        'title' => ts('Do you require a flag?'),
+        'type' => 'YesNo',
+        'required' => TRUE,
+      ],
       'ceremony_date' => [
         'title' => ts('What date and time of the ceremony'),
         'type' => 'date',
-        'required' => TRUE,
-      ],
-      'attending' => [
-        'title' => ts('Autism Ontario Representation - Who is attending?'),
-        'type' => 'text',
         'required' => TRUE,
       ],
       'open_to_public' => [
@@ -175,9 +165,19 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'YesNo',
         'required' => TRUE,
       ],
-      'require_flag' => [
-        'title' => ts('Do you require a flag?'),
-        'type' => 'YesNo',
+      'event_title' => [
+        'title' => ts('Event Title'),
+        'type' => 'text',
+        'required' => TRUE,
+      ],
+      'event_description' => [
+        'title' => ts('Event Description'),
+        'type' => 'textarea',
+        'required' => FALSE,
+      ],
+      'attending' => [
+        'title' => ts('Autism Ontario Representation - Who is attending?'),
+        'type' => 'text',
         'required' => TRUE,
       ],
     ];
@@ -217,9 +217,11 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         $this->add('file', $name, ts('Image'));
         $this->addUploadElement($name);
       }
+      if ($name == 'postal_code') {
+        $this->buildCustom(145, 'individual');
+      }
     }
 
-    $this->buildCustom(145, 'individual');
 
     $this->assign('postHelps', $postHelps);
 
