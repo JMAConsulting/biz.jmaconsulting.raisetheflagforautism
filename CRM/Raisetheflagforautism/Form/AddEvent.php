@@ -263,7 +263,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
 
       $photo = basename($fileInfo['name']);
       //$url = sprintf("<img src='%s' style=\"height:516px; width:617px\">", );
-      $url = "<img src='http://staging.raisetheflagforautism.com/wp-content/uploads/civicrm/persist/" . basename($fileInfo['name']) . "' style='height:516px;width:617px'>";
+      $url = "<img src='https://raisetheflagforautism.com/wp-content/uploads/civicrm/persist/" . basename($fileInfo['name']) . "' style='height:516px;width:617px'>";
     }
 
     $description = sprintf('
@@ -327,6 +327,9 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'custom_325' => CRM_Core_DAO::VALUE_SEPARATOR . $values['local_chapter'] . CRM_Core_DAO::VALUE_SEPARATOR, // Event Chapter
       'custom_850' => $values['attending'], // Autism Ontario Representative
       'custom_846' => $values['require_flag'], // Flag required?
+      'custom_847' => $values['first_name'] . ' ' . $values['last_name'], // What is your name custom field
+      'custom_848' => $values['email-Primary'], // What is your email address? Custom field
+      'custom_849' => $values['street_address'] . "\n" . $values['city'] . ' ' . CRM_Core_PseudoConstant::getLabel('CRM_Core_BAO_Address', 'state_province_id', $values['state_province']), // What is your mailing address?
     ]);
 
     $url = "https://autismontario.com/civicrm/event/manage/settings?reset=1&action=update&id=" . $eventID;
