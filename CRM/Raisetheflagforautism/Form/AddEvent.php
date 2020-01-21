@@ -116,6 +116,11 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     //CRM_Core_Error::debug('a', CRM_Event_PseudoConstant::eventType());
 
     $fields = [
+      'require_flag' => [
+        'title' => ts('Do you require a flag?'),
+        'type' => 'YesNo',
+        'required' => TRUE,
+      ],
       'local_chapter' => [
         'title' => ts('Closest local chapter of Autism Ontario?'),
         'type' => 'select',
@@ -149,11 +154,6 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'required' => FALSE,
       ],
       */
-      'require_flag' => [
-        'title' => ts('Do you require a flag?'),
-        'type' => 'YesNo',
-        'required' => TRUE,
-      ],
       'ceremony_date' => [
         'title' => ts('What date and time of the ceremony'),
         'type' => 'date',
