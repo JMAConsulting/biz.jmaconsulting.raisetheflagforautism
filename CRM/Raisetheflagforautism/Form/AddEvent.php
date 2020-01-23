@@ -126,24 +126,24 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'select',
         'required' => TRUE,
       ],
-      'location' => [
+      'name' => [
         'title' => ts('Name of location of flag raising?'),
         'type' => 'text',
         'required' => TRUE,
       ],
       'street_address' => [
-        'title' => ts('Street Address'),
+        'title' => ts('Street address of flag raising'),
         'type' => 'text',
         'post_help' => ts('This is where the flag will be sent. If you want the flag sent to a different address please email RTF@autismontario.com'),
         'required' => TRUE,
       ],
       'city' => [
-        'title' => ts('City'),
+        'title' => ts('City of flag raising'),
         'type' => 'text',
         'required' => TRUE,
       ],
       'postal_code' => [
-        'title' => ts('Postal Code'),
+        'title' => ts('Postal Code of flag raising'),
         'type' => 'text',
         'required' => TRUE,
       ],
@@ -217,10 +217,9 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         $this->add('file', $name, ts('Image'));
         $this->addUploadElement($name);
       }
-      if ($name == 'postal_code') {
-        $this->buildCustom(145, 'individual');
-      }
     }
+
+    $this->buildCustom(145, 'individual');
 
 
     $this->assign('postHelps', $postHelps);
@@ -300,6 +299,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       ],
     ];
     foreach ([
+      'name',
       'street_address',
       'city',
       'postal_code',
