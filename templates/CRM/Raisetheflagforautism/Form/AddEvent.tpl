@@ -9,6 +9,12 @@
     </div>
     <div class="clear"></div>
   </div>
+  {if $elementName eq 'postal_code'}
+    <br/><h2>{ts}Your Information{/ts}</h2>
+  {/if}
+  {if $elementName eq 'local_chapter'}
+    <br/><h2>{ts}Flag Raising Ceremony Details{/ts}</h2>
+  {/if}
 {/foreach}
 
 {if $isCaptcha}
