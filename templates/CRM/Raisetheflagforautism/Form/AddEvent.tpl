@@ -9,11 +9,12 @@
     </div>
     <div class="clear"></div>
   </div>
-  {if $elementName eq 'postal_code'}
-    <br/><h2>{ts}Your Information{/ts}</h2>
+  {if $elementName eq 'attending'}
+    <br/><br/><u><h4>{ts}Your Information{/ts}</h4></u>
+    <div class="description">(Will not be shared with the public - will be used to verify ceremony and send flag as required)</div><br/>
   {/if}
   {if $elementName eq 'local_chapter'}
-    <br/><h2>{ts}Flag Raising Ceremony Details{/ts}</h2>
+    <br/><br/><u><h4>{ts}Flag Raising Ceremony Details{/ts}</h4></u>
   {/if}
 {/foreach}
 
