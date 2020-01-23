@@ -126,7 +126,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'select',
         'required' => TRUE,
       ],
-      'location' => [
+      'name' => [
         'title' => ts('Name of location of flag raising?'),
         'type' => 'text',
         'required' => TRUE,
@@ -299,6 +299,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       ],
     ];
     foreach ([
+      'name',
       'street_address',
       'city',
       'postal_code',
