@@ -5,7 +5,6 @@
     <div class="label">{$form.$elementName.label}</div>
     <div class="content">
       {$form.$elementName.html}
-      {if $postHelps.$elementName}<div class="description">{$postHelps.$elementName}</div>{/if}
     </div>
     <div class="clear"></div>
   </div>
