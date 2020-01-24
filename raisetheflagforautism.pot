@@ -114,8 +114,8 @@ msgstr ""
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid ""
-"Will not be shared with the public - will be used to verify ceremony and "
-"send flag as required"
+"(Will not be shared with the public - will be used to verify ceremony and "
+"send flag as required)"
 msgstr ""
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
