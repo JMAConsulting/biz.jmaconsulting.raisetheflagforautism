@@ -74,7 +74,7 @@ msgstr ""
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "Autism Ontario Representation - Who is attending?"
-msgstr ""
+msgstr "Représentation d'Autisme Ontario - Qui sera présent?"
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "Image"
@@ -110,7 +110,7 @@ msgstr ""
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid "Your Information"
-msgstr ""
+msgstr "Vos coordonnées"
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid ""
@@ -120,7 +120,7 @@ msgstr "(Cette information est confidentielle, elle ne servira qu’à la vérif
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid "Flag Raising Ceremony Details"
-msgstr ""
+msgstr "Détails de la cérémonie de levée du drapeau"
 
 #: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
 msgid ""
