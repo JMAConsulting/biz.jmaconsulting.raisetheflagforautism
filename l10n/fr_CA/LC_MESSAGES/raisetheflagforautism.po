@@ -95,10 +95,6 @@ msgid "Creator Phone"
 msgstr ""
 
 #: plugins/raise_the_flag_shortcode/raise_the_flag_shortcode.php
-msgid "Raise the Flag"
-msgstr "Levée du drapeau"
-
-#: raisetheflagforautism.php
 msgid "Raise The Flag"
 msgstr "Levée du drapeau"
 
