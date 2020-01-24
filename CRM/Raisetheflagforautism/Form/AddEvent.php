@@ -181,7 +181,11 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'required' => FALSE,
       ],
     ];
+    $postHelps = [];
     foreach ($fields as $name => $field) {
+      if (!empty($field['post_help'])) {
+        $postHelps[$name] = $field['post_help'];
+      }
       $title = $field['title'];
       if ($field['type'] == 'select') {
          $this->add('select', $name, $title, CRM_Core_OptionGroup::values('chapter_20180619153429'), $field['required']);
@@ -213,6 +217,8 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     }
 
     $this->buildCustom(145, 'individual');
+
+    $this->assign('postHelps', $postHelps);
 
     $this->addButtons(array(
       array(

@@ -114,9 +114,9 @@ msgstr ""
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid ""
-"(Will not be shared with the public - will be used to verify ceremony and "
-"send flag as required)"
-msgstr ""
+"Will not be shared with the public - will be used to verify ceremony and "
+"send flag as required"
+msgstr "Cette information est confidentielle, elle ne servira qu’à la vérification de la cérémonie et à l’envoi du drapeau, s’il y a lieu."
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid "Flag Raising Ceremony Details"
