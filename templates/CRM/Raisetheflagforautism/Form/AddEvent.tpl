@@ -1,5 +1,5 @@
 {* HEADER *}
-{crmScope extensionKey='org.example.myextension'}
+{crmScope extensionKey='biz.jmaconsulting.raisetheflagforautism'}
 {foreach from=$elementNames item=elementName}
   <div class="crm-section">
     <div class="label">{$form.$elementName.label}</div>
