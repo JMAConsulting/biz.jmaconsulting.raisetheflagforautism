@@ -46,15 +46,15 @@ class CRM_Raisetheflagforautism_Page_Confirm extends CRM_Core_Page {
         'value' => CRM_Contact_BAO_Contact::displayName($event['created_id']),
       ],
       'email_address' => [
-        'label' => ts('Creator Email Address'),
+        'label' => E::ts('Creator Email Address'),
         'value' => sprintf('<a href=\'mailto:%s\'>%s</a>', $event['api.Email.get']['values'][0]['email'], $event['api.Email.get']['values'][0]['email']),
       ],
       'mailing_address' => [
-        'label' => ts('Creator Mailing Address'),
+        'label' => E::ts('Creator Mailing Address'),
         'value' => $address[1]['display'],
       ],
       'phone' => [
-        'label' => ts('Creator Phone'),
+        'label' => E::ts('Creator Phone'),
         'value' => $event['api.Phone.get']['values'][0]['phone'],
       ],
     ];

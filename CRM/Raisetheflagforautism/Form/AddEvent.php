@@ -57,7 +57,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
 
       if (array_intersect_key($fields, $fieldsToIgnore)) {
         $fields = array_diff_key($fields, $fieldsToIgnore);
-        CRM_Core_Session::setStatus(ts('Some of the profile fields cannot be configured for this page.'));
+        CRM_Core_Session::setStatus(E::ts('Some of the profile fields cannot be configured for this page.'));
       }
       $addCaptcha = FALSE;
 
@@ -109,7 +109,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
   }
 
   public function buildQuickForm() {
-    CRM_Utils_System::setTitle(ts('Autism Ontario - Flag Raising'));
+    CRM_Utils_System::setTitle(E::ts('Autism Ontario - Flag Raising'));
     $groupID = civicrm_api3('CustomGroup', 'getValue', ['name' => 'flag_raising', 'return' => 'id']);
     $groupTree = CRM_Core_BAO_CustomGroup::getTree('Event', NULL, $groupID, 0, NULL);
     $groupTree = CRM_Core_BAO_CustomGroup::formatGroupTree($groupTree, 1, $this);
@@ -117,33 +117,33 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
 
     $fields = [
       'require_flag' => [
-        'title' => ts('Do you require a flag?'),
+        'title' => E::ts('Do you require a flag?'),
         'type' => 'YesNo',
         'required' => TRUE,
       ],
       'local_chapter' => [
-        'title' => ts('Closest local chapter of Autism Ontario?'),
+        'title' => E::ts('Closest local chapter of Autism Ontario?'),
         'type' => 'select',
         'required' => TRUE,
       ],
       'name' => [
-        'title' => ts('Name of location of flag raising?'),
+        'title' => E::ts('Name of location of flag raising?'),
         'type' => 'text',
         'required' => TRUE,
       ],
       'street_address' => [
-        'title' => ts('Street address of flag raising'),
+        'title' => E::ts('Street address of flag raising'),
         'type' => 'text',
-        'post_help' => ts('This is where the flag will be sent. If you want the flag sent to a different address please email RTF@autismontario.com'),
+        'post_help' => E::ts('This is where the flag will be sent. If you want the flag sent to a different address please email RTF@autismontario.com'),
         'required' => TRUE,
       ],
       'city' => [
-        'title' => ts('City of flag raising'),
+        'title' => E::ts('City of flag raising'),
         'type' => 'text',
         'required' => TRUE,
       ],
       'postal_code' => [
-        'title' => ts('Postal Code of flag raising'),
+        'title' => E::ts('Postal Code of flag raising'),
         'type' => 'text',
         'required' => TRUE,
       ],
@@ -155,28 +155,28 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       ],
       */
       'ceremony_date' => [
-        'title' => ts('What date and time of the ceremony'),
+        'title' => E::ts('What date and time of the ceremony'),
         'type' => 'date',
         'required' => TRUE,
       ],
       'open_to_public' => [
-        'title' => ts('Is this ceremony open to public?'),
-        'post_help' => ts('i.e. do you want Autism Ontario to list your ceremony and help spread the word?'),
+        'title' => E::ts('Is this ceremony open to public?'),
+        'post_help' => E::ts('i.e. do you want Autism Ontario to list your ceremony and help spread the word?'),
         'type' => 'YesNo',
         'required' => TRUE,
       ],
       'event_title' => [
-        'title' => ts('Event Title'),
+        'title' => E::ts('Event Title'),
         'type' => 'text',
         'required' => TRUE,
       ],
       'event_description' => [
-        'title' => ts('Event Description'),
+        'title' => E::ts('Event Description'),
         'type' => 'textarea',
         'required' => FALSE,
       ],
       'attending' => [
-        'title' => ts('Autism Ontario Representation - Who is attending?'),
+        'title' => E::ts('Autism Ontario Representation - Who is attending?'),
         'type' => 'text',
         'required' => FALSE,
       ],
@@ -207,7 +207,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         $this->add('datepicker', $name, $title, '', $field['required'], $params);
       }
       if ($field['type'] ==  'file') {
-        $this->add('file', $name, ts('Image'));
+        $this->add('file', $name, E::ts('Image'));
         $this->addUploadElement($name);
       }
     }

@@ -1,0 +1,169 @@
+# Copyright CiviCRM LLC (c) 2004-2015
+# This file is distributed under the same license as the CiviCRM package.
+# If you contribute heavily to a translation and deem your work copyrightable,
+# make sure you license it to CiviCRM LLC under Academic Free License 3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: raisetheflagforautism\n"
+"POT-Creation-Date: 2020-01-24 11:53+1100\n"
+"Language-Team: CiviCRM Translators <civicrm-translators@lists.civicrm.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Some of the profile fields cannot be configured for this page."
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Autism Ontario - Flag Raising"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "Do you require a flag?"
+msgstr "Avez-vous besoin d’un drapeau?"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Closest local chapter of Autism Ontario?"
+msgstr "Section locale d’Autisme Ontario la plus près?"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Name of location of flag raising?"
+msgstr "Emplacement de la levée du drapeau?"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Street address of flag raising"
+msgstr "Adresse"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid ""
+"This is where the flag will be sent. If you want the flag sent to a "
+"different address please email RTF@autismontario.com"
+msgstr "Le drapeau sera envoyé à cette adresse. Si vous voulez que le drapeau soit envoyé à une adresse différente, écrivez à RTF@autismontario.com"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "City of flag raising"
+msgstr "Ville"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Postal Code of flag raising"
+msgstr "Code postal"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "What date and time of the ceremony"
+msgstr "Quelle est la date et l’heure de la cérémonie?"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Is this ceremony open to public?"
+msgstr "La cérémonie est-elle ouverte au public?"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid ""
+"i.e. do you want Autism Ontario to list your ceremony and help spread the "
+"word?"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Event Title"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Event Description"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Autism Ontario Representation - Who is attending?"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Image"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Submit"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Page/Confirm.php
+msgid "'%1' Event submitted succesfully"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Page/Confirm.php
+msgid "Creator Email Address"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Page/Confirm.php
+msgid "Creator Mailing Address"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Page/Confirm.php
+msgid "Creator Phone"
+msgstr ""
+
+#: plugins/raise_the_flag_shortcode/raise_the_flag_shortcode.php
+msgid "Raise the Flag"
+msgstr ""
+
+#: raisetheflagforautism.php
+msgid "Raise The Flag"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
+msgid "Your Information"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
+msgid ""
+"(Will not be shared with the public - will be used to verify ceremony and "
+"send flag as required)"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
+msgid "Flag Raising Ceremony Details"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid ""
+"Thanks for submitting this event. We will review your submission and add it "
+"to the website shortly."
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "Is this ceremony open to public? "
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "Yes"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "No"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "When"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "through"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "Location"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "Contact"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "Phone"
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "ext."
+msgstr ""
+
+#: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
+msgid "Email:"
+msgstr ""
