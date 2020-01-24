@@ -96,11 +96,11 @@ msgstr ""
 
 #: plugins/raise_the_flag_shortcode/raise_the_flag_shortcode.php
 msgid "Raise the Flag"
-msgstr ""
+msgstr "Levée du drapeau"
 
 #: raisetheflagforautism.php
 msgid "Raise The Flag"
-msgstr ""
+msgstr "Levée du drapeau"
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid "Your Information"
