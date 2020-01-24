@@ -59,12 +59,6 @@ msgid "Is this ceremony open to public?"
 msgstr "La cérémonie est-elle ouverte au public?"
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
-msgid ""
-"i.e. do you want Autism Ontario to list your ceremony and help spread the "
-"word?"
-msgstr ""
-
-#: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "Event Title"
 msgstr ""
 
@@ -111,6 +105,10 @@ msgstr ""
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid "Your Information"
 msgstr "Vos coordonnées"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "i.e. do you want Autism Ontario to list your ceremony and help spread the word?"
+msgstr "p. ex. Aimeriez-vous qu'Autisme Ontario inscrive votre cérémonie à sa liste d’activités et aide à la publiciser?"
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid ""
