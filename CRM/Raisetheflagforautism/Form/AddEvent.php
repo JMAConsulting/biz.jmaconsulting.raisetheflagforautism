@@ -126,7 +126,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
         'type' => 'select',
         'required' => TRUE,
       ],
-      'name' => [
+      'address_name' => [
         'title' => E::ts('Name of location of flag raising?'),
         'type' => 'text',
         'required' => TRUE,
@@ -301,7 +301,12 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'postal_code',
 
     ] as $name) {
-      $address[1][$name] = $values[$name];
+      if ($name === 'name') {
+        $address[1][$name] = $values['address_name'];
+      }
+      else {
+        $address[1][$name] = $values[$name];
+      }
     }
     $locParams = [
       'entity_table' => 'civicrm_event',
