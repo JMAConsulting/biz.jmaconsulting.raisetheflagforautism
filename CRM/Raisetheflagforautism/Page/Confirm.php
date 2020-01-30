@@ -59,7 +59,7 @@ class CRM_Raisetheflagforautism_Page_Confirm extends CRM_Core_Page {
       ],
     ];
     $this->assign('creator', $createdByInfo);
-
+    CRM_Core_Resources::singleton()->addStyleFile('biz.jmaconsulting.raisetheflagforautism', 'css/confirm.css');
     parent::run();
   }
 

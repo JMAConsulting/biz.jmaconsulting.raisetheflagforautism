@@ -109,6 +109,8 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
   }
 
   public function buildQuickForm() {
+    $locale = CRM_Core_I18n::getLocale();
+    $this->add('hidden', 'form_locale', $locale);
     CRM_Utils_System::setTitle(E::ts('Autism Ontario - Flag Raising'));
     $groupID = civicrm_api3('CustomGroup', 'getValue', ['name' => 'flag_raising', 'return' => 'id']);
     $groupTree = CRM_Core_BAO_CustomGroup::getTree('Event', NULL, $groupID, 0, NULL);
@@ -355,7 +357,14 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     );
     CRM_Utils_Mail::send($mailParams);
 
-    CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/event-confirm', 'reset=1&id=' . $eventID));
+    if (substr($values['form_locale'], 0, 2) !== 'en') {
+      $urlParam = 'fr/';
+    }
+    else {
+      $urlParam = '';
+    }
+//    CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/event-confirm', 'reset=1&id=' . $eventID));
+     CRM_Utils_System::redirect("https://www.autismontario.com/{$urlParam}civicrm/event-confirm?reset=1&id=" . $eventID);
     //CRM_Core_Error::debug('aaaa', $values);exit;
     parent::postProcess();
   }
