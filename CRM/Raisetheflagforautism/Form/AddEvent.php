@@ -329,7 +329,18 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'custom_846' => $values['require_flag'], // Flag required?
       'custom_847' => $values['first_name'] . ' ' . $values['last_name'], // What is your name custom field
       'custom_848' => $values['email-Primary'], // What is your email address? Custom field
-      'custom_849' => $values['street_address'] . "\n" . $values['city'] . ' ' . CRM_Core_PseudoConstant::getLabel('CRM_Core_BAO_Address', 'state_province_id', $values['state_province']), // What is your mailing address?
+      'custom_849' => $values['street_address-Primary'] . "\n" . $values['city-Primary'] . ' ' . CRM_Core_PseudoConstant::getLabel('CRM_Core_BAO_Address', 'state_province_id', $values['state_province']) .
+        '  ' . $values['postal_code-Primary'], // What is your mailing address?
+      'custom_857' => $values['phone-Primary-2'],
+    ]);
+
+    // Create Activity on the contact record of the user that created the Raise the flag event.
+    civicrm_api3('Activity', 'create', [
+      'source_contact_id' => $contactID,
+      'activity_type_id' => 140,
+      'subject' =>  E::ts('Raise the Flag Event Submitted') . ": Raise The Flag - " . $values['event_title'],
+      'status_id' => 2,
+      'created_date' => date('Y-m-d H:i:s'),
     ]);
 
     $url = "https://autismontario.com/civicrm/event/manage/settings?reset=1&action=update&id=" . $eventID;
