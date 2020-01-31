@@ -22,7 +22,7 @@
           {ts}Do you require a flag?{/ts}
         </div>
         <div class="content">
-          {if $event.custom_834 eq 1}{ts}Yes{/ts}{else}{ts}No{/ts}{/if}
+          {if $event.custom_846 eq 1}{ts}Yes{/ts}{else}{ts}No{/ts}{/if}
         </div>
     </div>
   </div>
