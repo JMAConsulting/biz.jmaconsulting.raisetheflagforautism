@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: raisetheflagforautism\n"
-"POT-Creation-Date: 2020-02-14 07:45+1100\n"
+"POT-Creation-Date: 2020-02-14 09:45+1100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: CiviCRM Translators <civicrm-translators@lists.civicrm.org>\n"
@@ -63,10 +63,6 @@ msgstr "Quelle est la date et l’heure de la cérémonie?"
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "Is this ceremony open to public?"
 msgstr "La cérémonie est-elle ouverte au public?"
-
-#: CRM/Raisetheflagforautism/Form/AddEvent.php
-msgid "Do you want Autism Ontario to promote your event"
-msgstr ""
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid ""

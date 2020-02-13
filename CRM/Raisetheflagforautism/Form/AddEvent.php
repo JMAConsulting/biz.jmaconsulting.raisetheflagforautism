@@ -163,11 +163,6 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       ],
       'open_to_public' => [
         'title' => E::ts('Is this ceremony open to public?'),
-        'type' => 'YesNo',
-        'required' => TRUE,
-      ],
-      'spread_the_word'  => [
-        'title' => E::ts('Do you want Autism Ontario to promote your event'),
         'post_help' => E::ts('i.e. do you want Autism Ontario to list your ceremony and help spread the word?'),
         'type' => 'YesNo',
         'required' => TRUE,
@@ -280,7 +275,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     $params = [
       'summary' => "",
       'event_type_id' => 23,
-      'is_public' => $values['open_to_public'],
+      'is_public' => 0,
       'description' => $description,
       //'is_online_registration' => '1',
       'start_date' => $values['ceremony_date'],
@@ -337,7 +332,7 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
       'custom_849' => $values['street_address-Primary'] . "\n" . $values['city-Primary'] . ' ' . CRM_Core_PseudoConstant::getLabel('CRM_Core_BAO_Address', 'state_province_id', $values['state_province']) .
         '  ' . $values['postal_code-Primary'], // What is your mailing address?
       'custom_857' => $values['phone-Primary-2'],
-      'custom_888' => $values['spread_the_word'], // Do they want autism ontario to list their event and spread the word.
+      'custom_888' => $values['open_to_public'], // Do they want autism ontario to list their event and spread the word.
     ]);
 
     // Create Activity on the contact record of the user that created the Raise the flag event.
