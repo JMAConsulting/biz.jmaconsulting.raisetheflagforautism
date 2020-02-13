@@ -5,11 +5,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: raisetheflagforautism\n"
-"POT-Creation-Date: 2020-01-24 11:53+1100\n"
+"POT-Creation-Date: 2020-02-14 07:45+1100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
 "Language-Team: CiviCRM Translators <civicrm-translators@lists.civicrm.org>\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "Some of the profile fields cannot be configured for this page."
@@ -40,7 +44,9 @@ msgstr "Adresse"
 msgid ""
 "This is where the flag will be sent. If you want the flag sent to a "
 "different address please email RTF@autismontario.com"
-msgstr "Le drapeau sera envoyé à cette adresse. Si vous voulez que le drapeau soit envoyé à une adresse différente, écrivez à RTF@autismontario.com"
+msgstr ""
+"Le drapeau sera envoyé à cette adresse. Si vous voulez que le drapeau soit "
+"envoyé à une adresse différente, écrivez à RTF@autismontario.com"
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "City of flag raising"
@@ -51,12 +57,24 @@ msgid "Postal Code of flag raising"
 msgstr "Code postal"
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
-msgid "What date and time of the ceremony"
+msgid "What date and time of the ceremony?"
 msgstr "Quelle est la date et l’heure de la cérémonie?"
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "Is this ceremony open to public?"
 msgstr "La cérémonie est-elle ouverte au public?"
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Do you want Autism Ontario to promote your event"
+msgstr ""
+
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid ""
+"i.e. do you want Autism Ontario to list your ceremony and help spread the "
+"word?"
+msgstr ""
+"p. ex. Aimeriez-vous qu'Autisme Ontario inscrive votre cérémonie à sa liste "
+"d’activités et aide à la publiciser?"
 
 #: CRM/Raisetheflagforautism/Form/AddEvent.php
 msgid "Event Title"
@@ -78,6 +96,10 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
+#: CRM/Raisetheflagforautism/Form/AddEvent.php
+msgid "Raise the Flag Event Submitted"
+msgstr ""
+
 #: CRM/Raisetheflagforautism/Page/Confirm.php
 msgid "'%1' Event submitted succesfully"
 msgstr ""
@@ -95,6 +117,10 @@ msgid "Creator Phone"
 msgstr ""
 
 #: plugins/raise_the_flag_shortcode/raise_the_flag_shortcode.php
+msgid "Raise the Flag"
+msgstr "Levée du drapeau"
+
+#: raisetheflagforautism.php
 msgid "Raise The Flag"
 msgstr "Levée du drapeau"
 
@@ -102,15 +128,13 @@ msgstr "Levée du drapeau"
 msgid "Your Information"
 msgstr "Vos coordonnées"
 
-#: CRM/Raisetheflagforautism/Form/AddEvent.php
-msgid "i.e. do you want Autism Ontario to list your ceremony and help spread the word?"
-msgstr "p. ex. Aimeriez-vous qu'Autisme Ontario inscrive votre cérémonie à sa liste d’activités et aide à la publiciser?"
-
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid ""
 "(Will not be shared with the public - will be used to verify ceremony and "
 "send flag as required)"
-msgstr "(Cette information est confidentielle, elle ne servira qu’à la vérification de la cérémonie et à l’envoi du drapeau, s’il y a lieu.)"
+msgstr ""
+"(Cette information est confidentielle, elle ne servira qu’à la vérification "
+"de la cérémonie et à l’envoi du drapeau, s’il y a lieu.)"
 
 #: templates/CRM/Raisetheflagforautism/Form/AddEvent.tpl
 msgid "Flag Raising Ceremony Details"
@@ -118,8 +142,8 @@ msgstr "Détails de la cérémonie de levée du drapeau"
 
 #: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
 msgid ""
-"Thanks for submitting this event. We will review your submission and add it "
-"to the website shortly."
+"Thanks for submitting this event. We will review your submission and get "
+"back to you shortly."
 msgstr ""
 
 #: templates/CRM/Raisetheflagforautism/Page/Confirm.tpl
