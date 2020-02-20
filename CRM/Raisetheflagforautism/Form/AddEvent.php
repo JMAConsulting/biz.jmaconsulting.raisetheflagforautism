@@ -238,8 +238,17 @@ class CRM_Raisetheflagforautism_Form_AddEvent extends CRM_Core_Form {
     $captcha->add($this);
     $this->assign('isCaptcha', TRUE);
    */
-
+    $this->addFormRule(['CRM_Raisetheflagforautism_Form_AddEvent', 'rtfFormRule']);
     parent::buildQuickForm();
+  }
+
+
+  public function rtfFormRule($values) {
+    $errors = [];
+    if (strlen($values['ceremony_date']) <= 10) {
+      $errors['ceremony_date'] = E::ts('You must include the time of the event as well');
+    }
+    return empty($errors) ? TRUE : $errors;
   }
 
   public function postProcess() {
