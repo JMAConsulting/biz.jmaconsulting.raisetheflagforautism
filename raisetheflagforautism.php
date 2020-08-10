@@ -149,6 +149,29 @@ function raisetheflagforautism_civicrm_preProcess($formName, &$form) {
   }
 }
 
+if (function_exists('add_filter')) {
+  add_filter('civicrm_shortcode_preprocess_atts', 'raisetheflagforautism_amend_args', 10, 2);
+}
+
+/**
+ * Filter the CiviCRM shortcode arguments.
+ *
+ * Modify the attributes that the 'civicrm' shortcode allows. The attributes
+ * that are injected (and their values) will become available in the $_REQUEST
+ * and $_GET arrays.
+ *
+ * @param array $args Existing shortcode arguments
+ * @param array $shortcode_atts Shortcode attributes
+ * @return array $args Modified shortcode arguments
+ */
+function raisetheflagforautism_amend_args($args, $shortcode_atts) {
+  if ($shortcode_atts['component'] === 'raise_the_flag') {
+    $args['q'] = 'civicrm/add-event';
+    $args['action'] = '';
+  }
+  return $args;
+}
+
 /**
  * Implements hook_civicrm_navigationMenu().
  *
